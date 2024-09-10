@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="/displayOrders/display">Order History</a>
+            <a href="#">Help</a>
+            <a href="/addfood">Add Food</a>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <form id="searchForm" action="/filtercat/filter" method="get">
+                    <input type="text" id="searchInput" name="category" placeholder="Search...">
+                    <button type="submit" id="searchButton">Search</button>
+                </form>
+            </div>
+            <a href="/signIn">Sign In</a>
+            <a href="/signUp">Sign Up</a>
+            <a href="/cart">Cart</a>
+            <!-- Profile Menu -->
+            <div class="profile-menu">
+                <button class="profile-button">Profile</button>
+                <div class="profile-dropdown">
+                    <form action="/logOut" method="POST">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="food-items">
+            <h2>Top restaurant chains in Nashik</h2>
+            <div id="food-items-list">
+                <% allfood.forEach((key) => { %>
+                <div class="food-item">
+                    <img src="<%= key.imgBuffer %>" alt="Food 1">
+                    <h3><%= key.Description %></h3>
+                    <p>Pizza, Italian, Pasta, Desserts</p>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="price" data-price="<%= key.price %>">₹<%= key.price %></p>
+                    <form action="/cart/AddToCart" method="post">
+                        <input type="hidden" name="productId" value="<%= key._id %>">
+                        <input type="hidden" name="productName" value="<%= key.Description %>">
+                        <input type="hidden" name="price" value="<%= key.price %>">
+                        <button type="submit">Add to Cart</button>
+                    </form>
+                </div>
+                <% }); %>
+            </div>
+        </section>
+        
+        <div class="pagination">
+            <form id="pagination-form" method="GET" action="/pagination">
+              <label for="page-select">Page:</label>
+              <select id="page-select" name="page" onchange="document.getElementById('pagination-form').submit()">
+                <% for (let i = 1; i <= totalPages; i++) { %>
+                  <option value="<%= i %>" <%= i === currentPage ? 'selected' : '' %>><%= i %></option>
+                <% } %>
+              </select>
+              <input type="hidden" name="limit" value="<%= limit %>">
+              <noscript>
+                <button type="submit">Go</button>
+              </noscript>
+            </form>
+          </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

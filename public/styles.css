@@ -1,0 +1,141 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    /*padding: 0;*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background-color: #4c5b62;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left a,
+.header-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.header-right input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+.header-left a:hover,
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+#food-items {
+    margin-bottom: 30px;
+}
+
+#food-items h2 {
+    margin-bottom: 20px;
+}
+
+#food-items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.food-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.food-item img {
+    /*width: 100%; /* Full width of the container */
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 5px;
+}
+
+.food-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.food-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.food-item .rating span {
+    font-size: 18px;
+    color: #ffcc00;
+}
+
+.food-item .price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.food-item button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.food-item button:hover {
+    background-color: #e65a50;
+}
+
+/* Cart styling */
+#cart {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#cart h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+#total-bill {
+    text-align: center;
+}
+
+#total-amount {
+    font-size: 24px;
+    color: #ff6f61;
+}

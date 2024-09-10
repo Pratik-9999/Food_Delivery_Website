@@ -1,0 +1,162 @@
+/* General styling for the food item container */
+#food-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container for both cards */
+.card-container {
+     display: flex; 
+    justify-content: space-between; /* Space between the two cards */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px; /* Optional: Adjust the spacing above the container */
+}
+
+.food-item,
+.card {
+    flex: 1; /* Allow both items to take up equal space */
+    max-width: 103%; /* Set the width relative to the container */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-item,
+    .card {
+        max-width: 100%; /* Ensure they stack nicely on smaller screens */
+        flex: none; /* Remove the equal space on smaller screens */
+    }
+}
+
+/* Styling for food item cards */
+.food-item {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #ddd; */
+    padding: 20px; /* Increase padding for a medium-sized card */
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.food-item img {
+    max-width: 70%; /* Adjust the max-width to make the image medium-sized */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-self: center; /* Center the image within the container */
+}
+
+.food-item h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.food-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Styling for the rating stars */
+.rating {
+    color: #f39c12;
+    font-size: 1.2em;
+}
+
+/* Styling for the price */
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Styling for the buttons container */
+.food-item form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Styling for buttons */
+.food-item button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+}
+
+.food-item button svg {
+    margin-right: 8px;
+}
+
+.food-item button[type="submit"] {
+    background-color: #e74c3c;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.food-item button[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+.food-item form:last-of-type button {
+    padding: 5px 10px; /* Reduce padding to make the button smaller */
+    font-size: 0.9em;  /* Slightly reduce the font size */
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px; /* Optional: Adjust margin to fit with other elements */
+}
+
+.food-item form:last-of-type button:hover {
+    background-color: #27ae60;
+}
+
+.food-item button svg {
+    margin-right: 5px; /* Adjust margin to fit the smaller button size */
+}
+
+/* Styling for the card section */
+.card {
+    border: 1px solid #ddd;
+    padding: 15px; /* Medium padding */
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em; /* Slightly larger font size for medium card */
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em; /* Medium font size */
+    color: #333;
+}
+
+.price-details {
+    margin-bottom: 10px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em; /* Medium font size */
+    font-weight: bold;
+}
+
+.free {
+    color: #27ae60;
+}

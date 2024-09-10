@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Orders</title>
+  <link rel="stylesheet" href="/order.css">
+  
+</head>
+<body>
+  <h1>Your Past Orders</h1>
+  <% if (orders.length > 0) { %>
+    <ul>
+      <% orders.forEach(order => { %>
+        <li>
+          <p>Order ID: <%= order._id %></p>
+          <p>Total Amount: ₹<%= order.totalAmount %></p>
+          <p>Delivery Address: <%= order.deliveryAddress %></p>
+          <p>Order Date: <%= order.CreatedAt%></p>
+          <ul>
+            <% order.items.forEach(item => { %>
+              <li>
+                <p>Food Item ID: <%= item.foodItemId %></p>
+                <p>Quantity: <%= item.quantity %></p>
+              </li>
+            <% }); %>
+          </ul>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No past orders found.</p>
+  <% } %>
+</body>
+</html>
